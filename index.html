@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAVZ & HIM — Our Story | Original Series</title>
+  <meta name="description" content="Some love stories don't arrive loudly. Ours waited quietly. A cinematic love story experience for Lavanya.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Ambient Glow -->
+  <div class="ambient-glow" id="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Custom Cursor Glow for Desktop -->
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       1. THEATRICAL CINEMATIC IDENT (The "L" Monogram)
+       ========================================================================== -->
+  <section id="cinematic-ident" aria-label="Theatrical Opening">
+    <div class="ident-beam" id="ident-beam"></div>
+    <div class="ident-trails" id="ident-trails">
+      <div class="ident-trail-line" style="animation-delay: 0.1s;"></div>
+      <div class="ident-trail-line" style="animation-delay: 0.25s;"></div>
+      <div class="ident-trail-line" style="animation-delay: 0.15s;"></div>
+      <div class="ident-trail-line" style="animation-delay: 0.3s;"></div>
+      <div class="ident-trail-line" style="animation-delay: 0.2s;"></div>
+    </div>
+    <div class="ident-content" id="ident-content">
+      <div class="ident-monogram">L</div>
+      <div class="ident-tagline">A LAVZ ORIGINAL</div>
+    </div>
+    <button class="skip-intro-btn" id="skip-ident-btn" type="button">Skip Intro ➔</button>
+  </section>
+
+  <!-- ==========================================================================
+       2. PROFILE SELECTION SCREEN ("WHO'S WATCHING?")
+       ========================================================================== -->
+  <section id="profile-screen" aria-label="Profile Selection">
+    <h1 class="profile-title">Who's watching?</h1>
+    <div class="profile-grid">
+      <!-- Profile: LAVZ -->
+      <div class="profile-card" id="profile-lavz" role="button" tabindex="0">
+        <div class="profile-avatar">
+          <span class="profile-avatar-icon">👑</span>
+        </div>
+        <div class="profile-name">Lavz ❤️</div>
+        <div class="profile-sub">The Queen</div>
+      </div>
+
+      <!-- Profile: HIM (Strict Privacy Protected) -->
+      <div class="profile-card" id="profile-him" role="button" tabindex="0">
+        <div class="profile-tooltip">Face Reveal: Coming Soon ❤️</div>
+        <div class="profile-avatar" style="background: #111;">
+          <img src="assets/first_drive_hands.png" alt="Silhouette" class="profile-avatar-img" style="filter: brightness(0.4) contrast(1.2);">
+          <div style="position: absolute; bottom: 8px; right: 8px; font-size: 1.1rem;">🔒</div>
+        </div>
+        <div class="profile-name">Him 🔒</div>
+        <div class="profile-sub">Identity Classified</div>
+      </div>
+
+      <!-- Profile: OUR STORY -->
+      <div class="profile-card story-featured" id="profile-story" role="button" tabindex="0">
+        <div class="profile-avatar">
+          <span class="profile-avatar-icon">🍿</span>
+        </div>
+        <div class="profile-name">Our Story ❤️</div>
+        <div class="profile-sub">Stream The Journey</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. ENTRY PROMPT & SOUNDTRACK TRIGGER
+       ========================================================================== -->
+  <div id="entry-prompt" role="dialog" aria-modal="true" aria-label="Start Streaming Experience">
+    <div class="entry-card">
+      <div class="entry-monogram">L</div>
+      <h2 class="entry-title">Ready to watch<br>how it all began?</h2>
+      <p class="entry-desc">
+        Turn up your volume.<br>
+        This is the story of how patience, faith, and Murugan's grace brought two lives together.
+      </p>
+      <button class="btn-play-story" id="btn-start-experience" type="button">
+        ▶ PLAY OUR STORY
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       4. CINEMATIC COLD OPEN
+       ========================================================================== -->
+  <section id="cold-open" aria-label="Cold Open">
+    <div class="cold-text" id="cold-text">It started with…</div>
+    <div class="reel-mockup-container" id="reel-container">
+      <div class="reel-card" id="reel-card">
+        <img src="assets/sunrise_beach.png" alt="Reel preview" class="reel-video-bg">
+        <div class="reel-overlay">
+          <div class="reel-top-bar">
+            <span>Reels</span>
+            <span>❤️ 12.4K</span>
+          </div>
+          <div class="reel-bottom-info">
+            <div class="reel-author">
+              <div class="reel-avatar-small">L</div>
+              <span class="reel-handle">@lavanya_official</span>
+              <button class="reel-btn-follow" id="cold-follow-btn" type="button">+ FOLLOW</button>
+            </div>
+            <p class="reel-caption">"Even when the world is noisy, stay patient. What's meant for you will find you." ✨</p>
+            <div class="reel-audio-pill">♫ Original Audio • Motivation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. STREAMING TOP NAVIGATION BAR
+       ========================================================================== -->
+  <header id="main-nav">
+    <div class="nav-left">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-monogram">L</span>
+        <span class="brand-text">LAVZ & HIM</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#episodes-shelf" class="nav-link">Episodes</a></li>
+        <li><a href="#dots-interactive-section" class="nav-link">The Murugan Dots</a></li>
+        <li><a href="#long-drive-section" class="nav-link">Long Drive</a></li>
+        <li><a href="#family-chapter" class="nav-link">Families</a></li>
+        <li><a href="#gallery-section" class="nav-link">Memories</a></li>
+      </ul>
+    </div>
+    <div class="nav-right">
+      <button class="btn-letter" id="nav-letter-btn" type="button" style="padding: 0.45rem 1rem; font-size: 0.85rem;">💌 Lavz's Letter</button>
+      <div class="nav-profile-pill" id="nav-profile-indicator">
+        <div class="nav-profile-avatar">❤️</div>
+        <span class="nav-profile-label">Our Story</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       6. FLOATING SOUNDTRACK DOCK
+       ========================================================================== -->
+  <div id="soundtrack-dock" aria-label="Soundtrack Audio Player">
+    <div class="dock-disc" id="dock-disc">
+      <div class="dock-disc-center"></div>
+    </div>
+    <div class="dock-info">
+      <div class="dock-title">
+        Nee Kavithaigala ♫
+        <span style="font-size: 0.65rem; color: #ff8085; border: 1px solid #ff4d58; padding: 1px 4px; border-radius: 3px;">OST</span>
+      </div>
+      <div class="dock-sub">Pradeep Kumar • Maragadha Naanayam</div>
+    </div>
+    <div class="dock-controls">
+      <button class="dock-btn" id="dock-play-btn" type="button" title="Play/Pause">
+        <span id="dock-play-icon">▶</span>
+      </button>
+      <button class="dock-btn" id="dock-mute-btn" type="button" title="Mute/Unmute">
+        <span id="dock-mute-icon">🔊</span>
+      </button>
+      <div class="dock-equalizer" id="dock-equalizer">
+        <div class="dock-eq-bar"></div>
+        <div class="dock-eq-bar"></div>
+        <div class="dock-eq-bar"></div>
+        <div class="dock-eq-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Element for Soundtrack -->
+  <audio id="soundtrack-audio" src="assets/Nee-Kavithaigala.mp3" preload="auto" loop></audio>
+
+  <!-- ==========================================================================
+       7. MAIN STREAMING HERO
+       ========================================================================== -->
+  <main>
+    <section id="hero">
+      <div class="hero-backdrop">
+        <video class="hero-img" autoplay muted loop playsinline poster="assets/ponnu_paakura_back.png">
+          <source src="assets/IMG_0214.MP4" type="video/mp4">
+        </video>
+        <div class="hero-gradient"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge-row">
+          <span class="badge-true-story">❤️ BASED ON A TRUE STORY</span>
+          <span class="badge-streaming-meta">SONGIFY ORIGINAL</span>
+          <span class="badge-streaming-meta">•</span>
+          <span class="badge-streaming-meta" style="color: #4ade80;">99% MATCH FOR LAVZ</span>
+          <span class="badge-streaming-meta">•</span>
+          <span class="badge-streaming-meta">2026 • 1 SEASON • 4K HDR</span>
+        </div>
+
+        <h1 class="hero-headline">SOME LOVE STORIES<br>DON'T ARRIVE LOUDLY.</h1>
+        <div class="hero-subheadline">SOMETIMES THEY WAIT.</div>
+
+        <p class="hero-description">
+          A random Reel. A quiet follow. A prayer. Almost two years of patience.<br>
+          And a love that arrived exactly when it was needed.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#episodes-shelf" class="btn-primary" id="btn-play-hero">
+            ▶ PLAY FROM BEGINNING
+          </a>
+          <a href="#gallery-section" class="btn-secondary">
+            + MY MEMORIES
+          </a>
+          <button class="btn-letter" id="btn-open-letter-hero" type="button">
+            💌 READ LETTER
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. CONTINUE WATCHING SHELF
+         ========================================================================== -->
+    <section class="shelf-section" id="episodes-shelf">
+      <div class="shelf-header">
+        <h2 class="shelf-title">
+          Continue Watching Our Story
+          <span class="shelf-title-pill">Season 1</span>
+        </h2>
+        <span style="font-size: 0.85rem; color: var(--text-muted);">Swipe or scroll to explore ➔</span>
+      </div>
+
+      <div class="shelf-scroll-wrapper">
+        <div class="shelf-cards-track" id="episodes-rail">
+
+          <!-- Episode 01 -->
+          <a href="#episode-01" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/sunrise_beach.png" alt="Ep 01 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 01</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 100%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 1</span><span>Watched</span></div>
+              <div class="episode-card-title">01 — The Reel</div>
+              <p class="episode-card-snippet">Almost two years ago, a motivational Reel caught his eyes during a difficult season.</p>
+            </div>
+          </a>
+
+          <!-- Episode 02 -->
+          <a href="#episode-02" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/random_car_convo.png" alt="Ep 02 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 02</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 100%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 2</span><span>Watched</span></div>
+              <div class="episode-card-title">02 — The Follow</div>
+              <p class="episode-card-snippet">Why does this girl keep appearing on my feed? Two separate wavelengths slowly aligned.</p>
+            </div>
+          </a>
+
+          <!-- Episode 03 -->
+          <a href="#episode-03" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/dm_first_msg.png" alt="Ep 03 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 03</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 100%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 3</span><span>Watched</span></div>
+              <div class="episode-card-title">03 — Quiet Messages</div>
+              <p class="episode-card-snippet">"15 APR 2025: Hi Lavanya..." A message sent into the quiet dark. Seen by destiny, not by Lavz.</p>
+            </div>
+          </a>
+
+          <!-- Episode 04 -->
+          <a href="#episode-04" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/dm_murugan_poem.png" alt="Ep 04 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 04</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 100%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 4</span><span style="color: var(--gold-accent);">Spiritual</span></div>
+              <div class="episode-card-title">04 — The Prayer</div>
+              <p class="episode-card-snippet">Lord Murugan 🛕. Both deeply devoted. Connecting the unseen dots of faith.</p>
+            </div>
+          </a>
+
+          <!-- Episode 05 -->
+          <a href="#episode-05" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/car_tender_care.png" alt="Ep 05 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 05</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 90%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 5</span><span>Intimate</span></div>
+              <div class="episode-card-title">05 — He Waited</div>
+              <p class="episode-card-snippet">No pressure. No constant demands. Just patience, quiet care, and being there.</p>
+            </div>
+          </a>
+
+          <!-- Episode 06 -->
+          <a href="#episode-06" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/temple_family.png" alt="Ep 06 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 06</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 85%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 6</span><span>Faith</span></div>
+              <div class="episode-card-title">06 — Almost 2 Years</div>
+              <p class="episode-card-snippet">"If she becomes part of my life, I'll take care of her." He asked Murugan and waited.</p>
+            </div>
+          </a>
+
+          <!-- Episode 07 -->
+          <a href="#episode-07" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/dm_chennai_trip.png" alt="Ep 07 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 07</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 80%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 7</span><span>Emotional</span></div>
+              <div class="episode-card-title">07 — When She Needed Love</div>
+              <p class="episode-card-snippet">Through tears and pain, a tiny warm flame grew. "I am on the way to Chennai..."</p>
+            </div>
+          </a>
+
+          <!-- Episode 08 -->
+          <a href="#episode-08" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/chat_starred_1.png" alt="Ep 08 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 08</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 75%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 8</span><span>Tender</span></div>
+              <div class="episode-card-title">08 — No Dramatic Proposal</div>
+              <p class="episode-card-snippet">"Yes or no, I'll respect it." Her answer: "Friend 🙂". She had no idea what was starting.</p>
+            </div>
+          </a>
+
+          <!-- Episode 09 -->
+          <a href="#episode-09" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/first_flower.png" alt="Ep 09 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 09</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 70%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 9</span><span style="color: var(--red-accent);">Climax</span></div>
+              <div class="episode-card-title">09 — The Call (I Love You)</div>
+              <p class="episode-card-snippet">She cried. He stayed on call until she slept. And at dawn: three quiet words.</p>
+            </div>
+          </a>
+
+          <!-- Episode 10 -->
+          <a href="#episode-10" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/sunrise_beach.png" alt="Ep 10 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 10</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 65%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 10</span><span>Joy</span></div>
+              <div class="episode-card-title">10 — The Girl Who Felt Happy</div>
+              <p class="episode-card-snippet">Safe. Cared For. Chosen. The girl who thought happiness was temporary found peace.</p>
+            </div>
+          </a>
+
+          <!-- Episode 11 -->
+          <a href="#family-chapter" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/ponnu_paakura_back.png" alt="Ep 11 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 11</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 60%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 11</span><span style="color: var(--gold-accent);">Ponnu Paakura</span></div>
+              <div class="episode-card-title">11 — Two Families</div>
+              <p class="episode-card-snippet">06.09.2026 Ponnu Paakura moment. Two families meeting in the temple of Murugan.</p>
+            </div>
+          </a>
+
+          <!-- Episode 12 -->
+          <a href="#final-sequence-section" class="episode-card">
+            <div class="episode-thumb-wrap">
+              <img src="assets/temple_ganesha_hug.png" alt="Ep 12 Thumb" class="episode-thumb-img">
+              <span class="episode-duration">Ep 12</span>
+              <div class="episode-play-icon">▶</div>
+            </div>
+            <div class="episode-progress-bar"><div class="episode-progress-fill" style="width: 50%;"></div></div>
+            <div class="episode-card-body">
+              <div class="episode-card-meta"><span>Chapter 12</span><span>Future</span></div>
+              <div class="episode-card-title">12 — Only The Beginning</div>
+              <p class="episode-card-snippet">Next Season: Wedding Day. Some spoilers are worth waiting for.</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. DETAILED STORY CHAPTERS
+         ========================================================================== -->
+    <div class="chapters-container">
+
+      <!-- EPISODE 01 -->
+      <section class="chapter-section" id="episode-01">
+        <div class="chapter-badge">EPISODE 01 • THE ALGORITHM</div>
+        <h2 class="chapter-title">The Reel That Started Everything</h2>
+        <div class="chapter-grid">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              Almost two years ago, while going through a difficult phase in life, he happened to find one of Lavanya's motivational Reels.
+            </p>
+            <p class="chapter-prose">
+              He watched it in silence. And kept scrolling.<br>
+              A few days later... another Reel appeared.
+            </p>
+            <blockquote class="chapter-quote">
+              “Why does this girl keep appearing on my feed?”
+            </blockquote>
+            <p class="chapter-prose">
+              He clicked <strong>Follow</strong>.<br>
+              He thought he was following a profile.<br>
+              He had no idea he was stepping into his destiny.
+            </p>
+            <div style="margin-top: 1.5rem; font-family: var(--font-quote); font-style: italic; color: #ffb3b8;">
+              “Some algorithms recommend content.<br>This one recommended a future.”
+            </div>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/sunrise_beach.png" alt="The Algorithm" class="chapter-media-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 02 -->
+      <section class="chapter-section" id="episode-02">
+        <div class="chapter-badge">EPISODE 02 • UNSEEN HARMONY</div>
+        <h2 class="chapter-title">Somewhere, He Started Liking Her</h2>
+        <div class="chapter-grid reverse">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              She didn't know.<br>
+              He never told her.<br>
+              But somewhere between her words, her stories, her thoughts, and the authentic way she saw life…
+            </p>
+            <blockquote class="chapter-quote">
+              “He started seeing someone who felt strangely, beautifully familiar.”
+            </blockquote>
+            <p class="chapter-prose">
+              Quietly observing from afar, never demanding attention. Like two musical frequencies waiting for the perfect moment to harmonize.
+            </p>
+          </div>
+          <div class="chapter-media-col">
+            <div class="wavelength-container">
+              <canvas id="wavelength-canvas" class="wave-canvas"></canvas>
+              <div class="wave-status-pill">● SAME WAVELENGTH SYNCHRONIZED</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 03 -->
+      <section class="chapter-section" id="episode-03">
+        <div class="chapter-badge">EPISODE 03 • THE SILENT ARCHIVE</div>
+        <h2 class="chapter-title">The Message She Never Saw</h2>
+        <div class="chapter-grid">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              On <strong>15 April 2025</strong>, he gathered the courage to send her a message.
+            </p>
+            <blockquote class="chapter-quote">
+              “Hi Lavanya, This page is created only for you. To create memories thru out life! Plz don't mistake me... one kind request please 🙏 don't ignore me”
+            </blockquote>
+            <p class="chapter-prose">
+              Days turned into weeks. The message got buried underneath hundreds of DMs.<br>
+              She never opened it.<br>
+              She never saw it.
+            </p>
+            <p class="chapter-prose" style="font-weight: 700; color: #ff6b72;">
+              SEEN BY DESTINY. NOT BY LAVZ. 😂
+            </p>
+          </div>
+          <div class="chapter-media-col">
+            <div class="dm-preview-card">
+              <div class="dm-preview-header">
+                <div class="dm-preview-avatar">L</div>
+                <div>
+                  <div style="font-weight: 700;">@_lavanya_official</div>
+                  <div style="font-size: 0.75rem; color: #888;">Direct Message • 15 APR 2025</div>
+                </div>
+              </div>
+              <img src="assets/dm_first_msg.png" alt="First message screenshot" style="width: 100%; border-radius: 12px; display: block;">
+              <div class="dm-tag-destiny">SAVED IN DESTINY'S INBOX 💌</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 04: MURUGAN & CONNECT THE DOTS -->
+      <section class="chapter-section" id="episode-04">
+        <div class="chapter-badge" style="color: var(--gold-accent);">EPISODE 04 • SACRED THREADS</div>
+        <h2 class="chapter-title" style="color: #fff;">Murugan: The Shared Devotion 🛕</h2>
+        <div class="chapter-grid reverse">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              Then came something neither of them had orchestrated.<br>
+              Something they unknowingly shared in their deepest prayers.
+            </p>
+            <p class="chapter-prose" style="font-size: 1.4rem; color: var(--gold-accent); font-weight: 800;">
+              MURUGAN. 🛕
+            </p>
+            <p class="chapter-prose">
+              Both deeply devoted to the Lord of the Hills. When he shared a story of Murugan, Lavanya reposted it without knowing what was quietly blooming inside his heart.
+            </p>
+            <blockquote class="chapter-quote" style="border-color: var(--gold-accent); color: #ffd880;">
+              “To her, a small moment.<br>To their story, another golden thread being tied by God.”
+            </blockquote>
+            <p class="chapter-prose">
+              <strong>“Oru naal oru naal... Velum mayilum Thunai 🦚”</strong>
+            </p>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card" style="border-color: rgba(216, 180, 106, 0.4);">
+              <img src="assets/dm_murugan_poem.png" alt="Murugan DM" class="chapter-media-img" style="height: auto; max-height: 520px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- INTERACTIVE: CONNECT THE DOTS -->
+        <div id="dots-interactive-section">
+          <h3 class="dots-section-title">✨ While They Were Living Their Lives...</h3>
+          <p class="dots-section-desc">
+            Someone was quietly connecting the dots.<br>
+            Drag or click across the points below to connect their journey into the sacred heart.
+          </p>
+
+          <div class="dots-canvas-wrap">
+            <canvas id="dots-canvas"></canvas>
+          </div>
+
+          <div class="dots-action-bar">
+            <button class="btn-gold" id="btn-auto-connect-dots" type="button">
+              ✨ Connect All Dots Automatically
+            </button>
+            <button class="btn-secondary" id="btn-reset-dots" type="button">
+              ↺ Reset
+            </button>
+          </div>
+
+          <div class="dots-resolved-message" id="dots-resolved-message">
+            “While they were living their lives… someone was quietly connecting the dots.<br>
+            <strong>MURUGAN 🛕❤️</strong>”
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 05 -->
+      <section class="chapter-section" id="episode-05">
+        <div class="chapter-badge">EPISODE 05 • GENTLE CARE</div>
+        <h2 class="chapter-title">His Way of Loving</h2>
+        <div class="chapter-grid">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              In a world full of noise and urgency, his presence was peace.
+            </p>
+            <div style="background: #111; padding: 1.5rem; border-radius: var(--radius-md); border-left: 3px solid var(--red-accent); margin-bottom: 1.5rem;">
+              <p style="font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem;">“Nothing will happen.”</p>
+              <p style="font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem;">“God is there.”</p>
+              <p style="font-size: 1.1rem; color: var(--gold-accent); font-weight: 700;">“Murugan is with you.”</p>
+            </div>
+            <p class="chapter-prose">
+              <strong>NO PRESSURE. NO CONSTANT CALLS. NO DEMANDS.</strong><br>
+              Just patience. Just care. Just quiet presence.
+            </p>
+            <blockquote class="chapter-quote">
+              “He didn't force his way into her life.<br>He simply stayed.”
+            </blockquote>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/car_tender_care.png" alt="Tender care" class="chapter-media-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 06 -->
+      <section class="chapter-section" id="episode-06">
+        <div class="chapter-badge">EPISODE 06 • UNWAVERING PATIENCE</div>
+        <h2 class="chapter-title">The Prayer</h2>
+        <div class="chapter-grid reverse">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              Before she even knew she would become part of his world, he was already praying for her.
+            </p>
+            <p class="chapter-prose">
+              He asked Murugan to bring her into his life. And he made a sacred promise in his heart:
+            </p>
+            <blockquote class="chapter-quote">
+              “If she becomes part of my life, I'll take care of her.”
+            </blockquote>
+            <div style="margin: 2.5rem 0; text-align: left;">
+              <div style="font-family: var(--font-headline); font-size: 3rem; font-weight: 900; color: #fff;">HE WAITED.</div>
+              <div style="font-family: var(--font-headline); font-size: 3rem; font-weight: 900; color: #ff6b72;">AND WAITED.</div>
+              <div style="font-family: var(--font-headline); font-size: 4rem; font-weight: 900; color: var(--red-accent);">ALMOST 2 YEARS.</div>
+            </div>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/temple_family.png" alt="Temple prayer" class="chapter-media-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 07 -->
+      <section class="chapter-section" id="episode-07">
+        <div class="chapter-badge">EPISODE 07 • LIGHT IN THE DARK</div>
+        <h2 class="chapter-title">When She Needed Love</h2>
+        <div class="chapter-grid">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              And then came one of the hardest chapters of her life.<br>
+              <em>“I had almost lost hope.”</em>
+            </p>
+            <p class="chapter-prose">
+              In that heavy darkness, when tears felt unending, he didn't run away. He traveled across cities.
+            </p>
+            <div style="background: #151515; border-radius: 12px; padding: 1.2rem; border-left: 3px solid #ff4d58; margin: 1.5rem 0;">
+              <div style="font-size: 0.85rem; color: #888; margin-bottom: 0.4rem;">24 SEP 2025 • Message on the road</div>
+              <p style="color: #fff; font-size: 1rem; line-height: 1.5;">
+                “Just because u felt alone. I am coming! am on the way to Chennai... Because u should never feel lonely. Ur Kutty Kutty asai !!”
+              </p>
+            </div>
+            <p class="chapter-prose">
+              Inside that darkness, one tiny warm light expanded.<br>
+              <strong>…he came closer.</strong>
+            </p>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-video-wrap">
+              <video class="chapter-video" controls playsinline poster="assets/dm_chennai_trip.png" id="hospital-video">
+                <source src="assets/IMG_0212.MP4" type="video/mp4">
+              </video>
+              <div style="padding: 0.8rem 1rem; font-size: 0.8rem; color: #aaa; text-align: center;">
+                Clip: Emotional moments & holding hands by the hospital bed
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 08 -->
+      <section class="chapter-section" id="episode-08">
+        <div class="chapter-badge">EPISODE 08 • NO DRAMA, JUST HONESTY</div>
+        <h2 class="chapter-title">No Dramatic Proposal</h2>
+        <div class="chapter-grid reverse">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              When he finally told her how he felt, there was no pressure.<br>
+              No theatrical demands. Just pure vulnerability.
+            </p>
+            <blockquote class="chapter-quote">
+              “Whether your answer is yes or no…<br>I'll respect it.”
+            </blockquote>
+            <p class="chapter-prose">
+              Her answer at that time?<br>
+              <span style="font-size: 1.5rem; font-weight: 800; color: #4ade80;">“FRIEND. 🙂”</span>
+            </p>
+            <div style="background: #141414; border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 700; color: #aaa; margin-bottom: 0.5rem;">
+                <span>LOVE STORY PROGRESS</span>
+                <span>20%</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #222; border-radius: 99px; overflow: hidden;">
+                <div style="width: 20%; height: 100%; background: var(--red-accent);"></div>
+              </div>
+              <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #888; font-style: italic;">
+                “She had no idea what fate had already written.”
+              </p>
+            </div>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/chat_starred_2.png" alt="Starred chats" class="chapter-media-img" style="height: auto; max-height: 520px;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 09: THE CALL & HEART UNLOCK -->
+      <section class="chapter-section" id="episode-09">
+        <div class="chapter-badge">EPISODE 09 • THE NIGHT EVERYTHING CHANGED</div>
+        <h2 class="chapter-title">The Call (00:00 → Dawn)</h2>
+        <div class="chapter-grid">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              One night… she cried.<br>
+              He stayed on the phone.<br>
+              She eventually fell asleep with the call still connected.
+            </p>
+            <p class="chapter-prose">
+              When she woke up at dawn… <strong>he was still there.</strong>
+            </p>
+            <p class="chapter-prose">
+              He started reciting a poem from his heart.<br>
+              Then everything went quiet.
+            </p>
+            <div class="call-words-reveal">
+              <div class="call-words-big">I LOVE YOU. ❤️</div>
+            </div>
+            <p class="chapter-prose" style="margin-top: 1.5rem;">
+              She already knew.<br>
+              But he didn't know that she knew.<br>
+              And somehow… this time, those three words felt completely different.
+            </p>
+          </div>
+          <div class="chapter-media-col">
+            <!-- Simulated Call UI -->
+            <div class="call-simulation-card">
+              <div class="call-status-badge">● CALL CONNECTED</div>
+              <div class="call-timer" id="call-timer">01:42:09</div>
+              <div class="call-waveform">
+                <div class="call-wave-bar"></div>
+                <div class="call-wave-bar" style="animation-delay: 0.2s;"></div>
+                <div class="call-wave-bar" style="animation-delay: 0.4s;"></div>
+                <div class="call-wave-bar" style="animation-delay: 0.1s;"></div>
+                <div class="call-wave-bar" style="animation-delay: 0.3s;"></div>
+                <div class="call-wave-bar" style="animation-delay: 0.5s;"></div>
+              </div>
+              <div style="font-size: 0.9rem; color: #888;">Nee Kavithaigala whispers softly on the line…</div>
+            </div>
+
+            <!-- Heart Unlock Box -->
+            <div class="heart-unlock-box">
+              <div class="unlock-icon" id="unlock-heart-icon">🔒</div>
+              <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">LAVZ'S HEART</h3>
+              <p style="font-size: 0.85rem; color: #aaa;">Slide or click to complete the unlocking</p>
+              <div class="unlock-meter">
+                <div class="unlock-meter-fill" id="unlock-meter-fill"></div>
+              </div>
+              <div class="unlock-percentage" id="unlock-percentage">20%</div>
+              <button class="btn-primary" id="btn-unlock-heart" type="button" style="margin-top: 1.2rem; padding: 0.6rem 1.8rem; font-size: 0.9rem;">
+                ❤️ Tap To Unlock
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 10 -->
+      <section class="chapter-section" id="episode-10">
+        <div class="chapter-badge">EPISODE 10 • PEACE REDISCOVERED</div>
+        <h2 class="chapter-title">The Girl Who Felt Happy Again</h2>
+        <div class="chapter-grid reverse">
+          <div class="chapter-text-col">
+            <p class="chapter-prose">
+              The girl who thought happiness was temporary… started feeling genuinely happy again.
+            </p>
+            <div style="display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 120px; background: #141414; padding: 1.2rem; border-radius: 8px; text-align: center; border: 1px solid var(--border-subtle);">
+                <div style="font-size: 1.8rem;">🛡️</div>
+                <div style="font-family: var(--font-headline); font-weight: 800; margin-top: 0.5rem;">SAFE.</div>
+              </div>
+              <div style="flex: 1; min-width: 120px; background: #141414; padding: 1.2rem; border-radius: 8px; text-align: center; border: 1px solid var(--border-subtle);">
+                <div style="font-size: 1.8rem;">❤️</div>
+                <div style="font-family: var(--font-headline); font-weight: 800; margin-top: 0.5rem;">CARED FOR.</div>
+              </div>
+              <div style="flex: 1; min-width: 120px; background: #141414; padding: 1.2rem; border-radius: 8px; text-align: center; border: 1px solid var(--border-subtle);">
+                <div style="font-size: 1.8rem;">✨</div>
+                <div style="font-family: var(--font-headline); font-weight: 800; margin-top: 0.5rem;">CHOSEN.</div>
+              </div>
+            </div>
+            <p class="chapter-prose">
+              Sometimes love doesn't arrive loudly.<br>
+              Sometimes it arrives quietly.<br>
+              Sometimes it waits. Sometimes it simply stays.<br>
+              And sometimes… it finds you exactly when you need it.
+            </p>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/sunrise_beach.png" alt="Sunrise together" class="chapter-media-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECRET EPISODE: THE YES THAT WAS NEVER SAID -->
+      <section class="chapter-section" id="secret-episode-yes" style="background: #110809; border: 1px solid rgba(229, 9, 20, 0.3); border-radius: var(--radius-lg); padding: 3.5rem 3rem; text-align: center;">
+        <div class="chapter-badge">SECRET EPISODE • UNWRITTEN CONFIRMATION</div>
+        <h2 class="chapter-title" style="margin-bottom: 1.2rem;">The Yes That Was Never Said</h2>
+        <p class="chapter-prose" style="max-width: 680px; margin: 0 auto 2.5rem auto;">
+          There was a night when Lavanya had already made her decision in her heart.<br>
+          Yet she never actually said out loud: “Okay.”<br>
+          Somehow... he understood without words.
+        </p>
+
+        <div style="display: flex; justify-content: center; align-items: center; gap: 1.5rem; position: relative; min-height: 80px;">
+          <button id="btn-secret-yes" class="btn-primary" type="button" style="transition: transform 0.2s ease;">
+            YES ❤️
+          </button>
+          <span style="font-size: 1.5rem; color: #666;">...</span>
+        </div>
+        <div id="secret-yes-revealed" style="margin-top: 1.5rem; font-family: var(--font-quote); font-size: 1.6rem; font-style: italic; color: #ff999f; display: none;">
+          “HE ALREADY KNEW. ❤️<br><span style="font-size: 1.1rem; color: var(--text-secondary);">The quiet beginning of choosing each other forever.</span>”
+        </div>
+      </section>
+
+      <!-- SPECIAL MEMORY: FIRST LONG DRIVE (04.07.2026) -->
+      <section id="long-drive-section">
+        <div class="chapter-badge">SPECIAL MEMORY • 04.07.2026</div>
+        <div class="drive-route-header">
+          <div class="drive-city">CHENNAI</div>
+          <div class="drive-route-line"></div>
+          <div class="drive-city">BANGALORE</div>
+        </div>
+        <h2 style="font-family: var(--font-headline); font-size: 2.8rem; font-weight: 800; text-align: center; margin-bottom: 1.5rem;">
+          THE FIRST LONG DRIVE
+        </h2>
+        <p class="chapter-prose" style="max-width: 740px; margin: 0 auto 2.5rem auto; text-align: center;">
+          Their first night together. Nothing extravagant.<br>
+          Just a long drive through the endless highway.<br>
+          Hours of talking. Hours of laughing. Hands held together.<br>
+          And little memories that somehow became unforgettable.
+        </p>
+
+        <div class="chapter-grid">
+          <div class="chapter-media-col">
+            <div class="chapter-video-wrap">
+              <video class="chapter-video" controls playsinline poster="assets/first_drive_hands.png" id="drive-video">
+                <source src="assets/IMG_0214.MP4" type="video/mp4">
+              </video>
+              <div style="padding: 0.8rem; font-size: 0.8rem; color: #aaa; text-align: center;">
+                Clip: Night highway, dashboard playing Nee Kavithaigala
+              </div>
+            </div>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/first_drive_hands.png" alt="Holding hands while driving" class="chapter-media-img">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAVORITE THINGS & ROAST MODE -->
+      <section class="chapter-section" id="fav-things-section">
+        <div class="chapter-badge">OUR FAVORITES</div>
+        <h2 class="chapter-title" style="text-align: center;">What We Love</h2>
+        <div class="favorites-grid">
+          <div class="fav-card">
+            <div class="fav-icon">🛕</div>
+            <h3 class="fav-title">LORD MURUGAN</h3>
+            <p class="fav-desc">The faith that brought them together from the very beginning. Velum Mayilum Thunai.</p>
+          </div>
+          <div class="fav-card">
+            <div class="fav-icon">😂</div>
+            <h3 class="fav-title">LAUGHING TOGETHER</h3>
+            <p class="fav-desc">Even during the hardest and most uncertain moments. Finding joy in the smallest details.</p>
+          </div>
+          <div class="fav-card">
+            <div class="fav-icon">🍜</div>
+            <h3 class="fav-title">FOOD</h3>
+            <p class="fav-desc">A very serious, deeply emotional relationship. 😭😂</p>
+          </div>
+        </div>
+
+        <!-- ROAST MODE EASTER EGG -->
+        <div id="roast-container">
+          <button class="btn-secondary" id="btn-activate-roast" type="button" style="border: 1px solid #ef4444; color: #ff8085;">
+            🔥 ACTIVATE ROAST MODE 😂
+          </button>
+          <div id="roast-message-box" style="display: none; margin-top: 1.5rem;">
+            <div style="font-family: var(--font-headline); font-size: 1.5rem; font-weight: 900; color: #ef4444; margin-bottom: 0.6rem;">
+              ⚠️ WARNING: LAVZ HAS ENTERED DANGEROUS TERRITORY.
+            </div>
+            <div style="font-size: 1.2rem; font-weight: 700; color: #fff;">ROAST MASTER: HIM.</div>
+            <p style="font-size: 1.1rem; color: #ccc; margin-top: 0.5rem; font-style: italic;">
+              “He alone is enough to roast me.” 😭😂
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPISODE 11: FAMILY CHAPTER -->
+      <section class="chapter-section" id="family-chapter">
+        <div class="chapter-badge" style="color: var(--gold-accent);">EPISODE 11 • SACRED BEGINNINGS</div>
+        <h2 class="chapter-title" style="text-align: center;">Two People Became Two Families</h2>
+
+        <div class="family-convergence">
+          <div class="family-box">
+            <div class="family-symbol">🏡</div>
+            <h3 style="font-family: var(--font-headline); font-weight: 800; margin-top: 0.5rem;">HER FAMILY</h3>
+          </div>
+          <div style="font-size: 2.5rem; color: var(--gold-accent); animation: pulse 2s infinite;">🛕</div>
+          <div class="family-box">
+            <div class="family-symbol">🏡</div>
+            <h3 style="font-family: var(--font-headline); font-weight: 800; margin-top: 0.5rem;">HIS FAMILY</h3>
+          </div>
+        </div>
+
+        <p class="chapter-prose" style="text-align: center; max-width: 680px; margin: 0 auto 3rem auto;">
+          Two people choosing each other… became two families believing in their future.
+        </p>
+
+        <!-- EXACT DATES TIMELINE -->
+        <div class="timeline-faith-list">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-date">04.07.2026</div>
+              <div class="timeline-event">First night / Chennai → Bangalore long drive 🚗</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--red-accent); box-shadow: 0 0 15px rgba(229, 9, 20, 0.8);"></div>
+            <div>
+              <div class="timeline-date" style="color: var(--red-accent);">06.09.2026</div>
+              <div class="timeline-event" style="font-weight: 700;">Ponnu Paakura Moment ❤️ (Traditional Meeting)</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div>
+              <div class="timeline-date">15.07.2027</div>
+              <div class="timeline-event">He met my family for the first time 🛕</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-grid" style="margin-top: 4rem;">
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/ponnu_paakura_back.png" alt="Ponnu Paakura Moment" class="chapter-media-img">
+            </div>
+          </div>
+          <div class="chapter-media-col">
+            <div class="chapter-media-card">
+              <img src="assets/ponnu_paakura_coffee.png" alt="Coffee serving moment" class="chapter-media-img">
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Circle Climax -->
+        <div style="text-align: center; margin-top: 5rem; padding: 3rem; background: #0c0b09; border: 1px solid rgba(216, 180, 106, 0.25); border-radius: var(--radius-lg);">
+          <p style="font-family: var(--font-quote); font-size: 1.6rem; font-style: italic; color: #ffd880; line-height: 1.7; margin-bottom: 2rem;">
+            “The same Murugan he prayed to…<br>
+            when she was still just a girl on Instagram…<br>
+            was now watching their families meet.”
+          </p>
+          <div style="font-family: var(--font-headline); font-weight: 900; letter-spacing: 0.15em; font-size: 1.1rem; color: #aaa; text-transform: uppercase;">
+            FROM A REEL ➔ A FOLLOW ➔ A MESSAGE ➔ A PRAYER ➔ TWO YEARS OF PATIENCE ➔ I LOVE YOU ➔ SHE CHOSE HIM ➔ TWO FAMILIES ➔ MURUGAN ❤️
+          </div>
+          <div style="margin-top: 2rem; font-size: 1.25rem; font-weight: 700; color: #fff;">
+            “Maybe it was never a coincidence.”
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE: DESTINY MAP -->
+      <section class="chapter-section" id="destiny-map-section" style="text-align: center;">
+        <div class="chapter-badge" style="color: var(--gold-accent);">THE DESTINY MAP</div>
+        <h2 class="chapter-title">Step by Step, Guided by Faith</h2>
+
+        <div style="max-width: 500px; margin: 3rem auto; text-align: left; display: flex; flex-direction: column; gap: 1.2rem;">
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">01 • The Reel in the Dark</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">02 • The Quiet Follow</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">03 • Murugan Story Repost</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">04 • The Unopened Message (15 Apr)</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">05 • Two Years of Prayers</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">06 • The Midnight Call & "I Love You"</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">07 • Long Drive to Bangalore (04.07.2026)</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">08 • Ponnu Paakura Moment (06.09.2026)</div>
+          <div style="background: #141414; padding: 1rem 1.4rem; border-radius: 8px; border: 1px solid #282828;">09 • Two Families United in Faith</div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <div style="font-family: var(--font-headline); font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">COINCIDENCE?</div>
+          <button class="btn-primary" id="btn-destiny-answer" type="button" style="padding: 0.8rem 2.5rem;">
+            NO.
+          </button>
+          <div id="destiny-reveal-text" style="font-family: var(--font-headline); font-size: 2.8rem; font-weight: 900; color: var(--gold-accent); margin-top: 1.5rem; display: none;">
+            DESTINY. ❤️
+          </div>
+        </div>
+      </section>
+
+      <!-- FACE REVEAL EASTER EGG (The Man Behind The Story) -->
+      <section id="face-reveal-section">
+        <div id="face-reveal-card">
+          <div class="classified-stamp">IDENTITY CLASSIFIED 🔒</div>
+          <h2 style="font-family: var(--font-headline); font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">
+            THE MAN BEHIND THE STORY
+          </h2>
+          <div class="face-reveal-thumb">
+            <img src="assets/ponnu_paakura_back.png" alt="Him Silhouette">
+          </div>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Curious to see his face? Click below to decrypt profile.
+          </p>
+          <button class="btn-secondary" id="btn-reveal-him" type="button">
+            REVEAL HIM
+          </button>
+          <div class="buffer-counter" id="buffer-counter">0%</div>
+          <div class="denied-alert" id="denied-alert">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">ACCESS DENIED 🔒</div>
+            <div style="font-size: 1.15rem; font-weight: 700; color: #fff;">Face Reveal Reserved For The Wedding Day. ❤️</div>
+            <p style="font-size: 0.85rem; color: #bbb; margin-top: 0.4rem;">Some spoilers are worth waiting for.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MEMORY GALLERY -->
+      <section class="chapter-section" id="gallery-section">
+        <div class="chapter-badge">ORIGINAL ARCHIVES</div>
+        <h2 class="chapter-title">Moments Only We Understand</h2>
+        <p class="chapter-prose">Click any photograph to view in full-screen cinema mode.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item" data-full="assets/first_flower.png" data-caption="The First Flower inside the car on a quiet night">
+            <img src="assets/first_flower.png" alt="The First Flower" loading="lazy">
+            <div class="gallery-caption">The First Flower 🌸</div>
+          </div>
+          <div class="gallery-item" data-full="assets/first_drive_hands.png" data-caption="04.07.2026 — Hands held on the first long drive">
+            <img src="assets/first_drive_hands.png" alt="First Long Drive" loading="lazy">
+            <div class="gallery-caption">First Long Drive • 04.07.2026</div>
+          </div>
+          <div class="gallery-item" data-full="assets/sunrise_beach.png" data-caption="Watching our first sunrise together on the beach">
+            <img src="assets/sunrise_beach.png" alt="Sunrise Together" loading="lazy">
+            <div class="gallery-caption">First Sunrise Together 🌅</div>
+          </div>
+          <div class="gallery-item" data-full="assets/ponnu_paakura_back.png" data-caption="06.09.2026 — Ponnu Paakura moment with our families">
+            <img src="assets/ponnu_paakura_back.png" alt="Ponnu Paakura" loading="lazy">
+            <div class="gallery-caption">Ponnu Paakura Moment ❤️</div>
+          </div>
+          <div class="gallery-item" data-full="assets/ponnu_paakura_coffee.png" data-caption="Serving coffee with all smiles to family">
+            <img src="assets/ponnu_paakura_coffee.png" alt="Serving Coffee" loading="lazy">
+            <div class="gallery-caption">Ponnu Paakura Coffee ☕</div>
+          </div>
+          <div class="gallery-item" data-full="assets/temple_family.png" data-caption="Family blessing in front of Murugan Temple">
+            <img src="assets/temple_family.png" alt="Murugan Temple Blessing" loading="lazy">
+            <div class="gallery-caption">Murugan Temple Blessing 🛕</div>
+          </div>
+          <div class="gallery-item" data-full="assets/random_car_convo.png" data-caption="Laughing endlessly in the car together">
+            <img src="assets/random_car_convo.png" alt="Car Convo" loading="lazy">
+            <div class="gallery-caption">Random Car Laughs 😂</div>
+          </div>
+          <div class="gallery-item" data-full="assets/car_tender_care.png" data-caption="Quiet care and gentle presence">
+            <img src="assets/car_tender_care.png" alt="Care" loading="lazy">
+            <div class="gallery-caption">His Way of Caring ❤️</div>
+          </div>
+          <div class="gallery-item" data-full="assets/temple_ganesha_hug.png" data-caption="Prayers before Lord Ganesha & Shiva">
+            <img src="assets/temple_ganesha_hug.png" alt="Temple Prayer" loading="lazy">
+            <div class="gallery-caption">Together in Prayer 🛕</div>
+          </div>
+          <div class="gallery-item" data-full="assets/girlfriend_day_flowers.png" data-caption="Flowers & chocolate on girlfriend day">
+            <img src="assets/girlfriend_day_flowers.png" alt="Girlfriend Day Surprise" loading="lazy">
+            <div class="gallery-caption">Sweetest Surprise 🍫</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR PRIVATE CINEMA -->
+      <section class="chapter-section" style="text-align: center; margin: 6rem 0;">
+        <div class="chapter-badge">NOW STREAMING EXCLUSIVELY</div>
+        <h2 class="chapter-title">Tonight's Feature: Lavz & Him</h2>
+        <div style="background: #141414; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 3rem 2rem; max-width: 600px; margin: 0 auto;">
+          <div style="font-size: 1.1rem; color: #ffb3b8; font-weight: 700; margin-bottom: 0.5rem;">GENRE</div>
+          <p style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1.5rem;">Romance • Comedy • Faith</p>
+          <div style="font-size: 1.1rem; color: #ffb3b8; font-weight: 700; margin-bottom: 0.5rem;">RATING</div>
+          <p style="font-size: 2rem; font-weight: 900; color: var(--red-accent); margin-bottom: 1.5rem;">∞ / 10 ❤️</p>
+          <div style="font-size: 1.1rem; color: #ffb3b8; font-weight: 700; margin-bottom: 0.5rem;">CAST</div>
+          <p style="font-size: 1.3rem; font-weight: 700;">
+            LAVZ &nbsp;+&nbsp; <span style="background: #333; padding: 2px 14px; border-radius: 4px; color: transparent; user-select: none;" title="Coming Soon 😉">████████</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- QUOTE SECTION -->
+      <section class="chapter-section" style="text-align: center; padding: 6rem 1rem;">
+        <blockquote style="font-family: var(--font-quote); font-size: 2.2rem; font-style: italic; color: #ffffff; line-height: 1.8; max-width: 850px; margin: 0 auto;">
+          “He found me when he needed hope.<br>
+          <span style="color: #ff999f;">I found him when I needed love.</span><br>
+          <span style="color: var(--gold-accent);">And Murugan found the perfect time to bring us together. 🛕❤️</span>”
+        </blockquote>
+      </section>
+
+    </div>
+
+    <!-- FINAL THEATRICAL SEQUENCE & POST-CREDITS -->
+    <section id="final-sequence-section">
+      <div class="final-quote-card">
+        <h2 class="final-title-card">IF OUR STORY IS A MOVIE...</h2>
+        <p style="font-family: var(--font-quote); font-size: 2rem; font-style: italic; color: #ff999f; margin-bottom: 2rem;">
+          THIS ISN'T THE ENDING.
+        </p>
+        <div style="font-family: var(--font-headline); font-size: 3.5rem; font-weight: 900; color: var(--red-accent); margin-bottom: 2rem;">
+          THIS IS ONLY THE BEGINNING. ❤️
+        </div>
+      </div>
+
+      <div class="post-credit-card">
+        <div style="font-size: 0.85rem; letter-spacing: 0.3em; color: #888; text-transform: uppercase; margin-bottom: 1rem;">POST-CREDIT SCENE</div>
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">💍</div>
+        <div style="font-family: var(--font-headline); font-size: 1.8rem; font-weight: 900;">NEXT SEASON: WEDDING DAY</div>
+        <div style="color: #4ade80; font-weight: 700; margin: 0.5rem 0;">STATUS: COMING SOON</div>
+        <div style="font-size: 0.95rem; color: #aaa; margin-top: 1rem;">
+          FACE REVEAL 🔒 LOCKED<br>
+          <span style="font-style: italic; color: #888;">“Some spoilers are worth waiting for.”</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       10. LETTER FROM LAVZ MODAL
+       ========================================================================== -->
+  <div id="letter-modal" role="dialog" aria-modal="true" aria-label="Letter from Lavz">
+    <div class="letter-paper">
+      <button class="letter-close-btn" id="letter-close-btn" type="button" aria-label="Close Letter">&times;</button>
+      <div class="letter-wax-seal">L</div>
+      <div class="letter-body">
+        “If this is a movie, I don’t want a perfect story. I just want the story to keep going… with you. ❤️<br><br>
+        Thank you for finding me, choosing me and patiently waiting for me. We’ve already collected so many little memories, and I can’t wait to see how many more chapters are waiting for us.<br><br>
+        Whatever happens, I want to keep choosing you, laughing with you and growing with you.<br><br>
+        This is only the beginning of our story. ❤️”
+      </div>
+      <div class="letter-signoff">
+        — Yours lovingly,<br>
+        Lavz
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       11. LIGHTBOX MODAL
+       ========================================================================== -->
+  <div id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <button class="lightbox-close-btn" id="lightbox-close-btn" type="button" aria-label="Close Lightbox">&times;</button>
+    <div class="lightbox-content-box">
+      <img src="" alt="" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption-text" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>LAVZ & HIM • OUR STORY • ORIGINAL STREAMING EXPERIENCE</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem;">Created with love, devotion, and faith in Murugan 🛕❤️</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

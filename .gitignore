@@ -1,0 +1,13 @@
+# Temporary & Inspect Scripts
+video_frames/
+extract.html
+test-inspect.html
+verify_assets.js
+inspect_media.ps1
+analyze_assets.js
+
+# Excluded privacy-sensitive assets (Face protection)
+assets/image.png
+assets/IMG_0211.MP4
+assets/IMG_0215.MP4
+assets/cute funny.png
